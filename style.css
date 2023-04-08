@@ -1,0 +1,360 @@
+* {
+    font-family: sans-serif;
+    margin: unset;
+    scroll-behavior: smooth;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    padding-bottom: 4rem;
+    box-sizing: inherit;
+    background-color: rgb(160, 194, 200);
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    background-color: rgb(24, 24, 24);
+}
+
+nav {
+    background-color: rgb(24, 24, 24);
+    /* margin-bottom: 1%; */
+}
+
+.container {
+    margin: 0px 15%;
+    margin-top: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    padding: 5px 0px;
+}
+
+.menu>.menu-item {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+    height: 40px;
+    width: fit-content;
+    align-items: center;
+    font-size: 20px;
+    padding: 0px 7px;
+    transition: all 0.25s ease-in-out;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    color: rgb(196, 203, 210);
+}
+
+
+.menu>.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.477);
+    transition: all 0.25s ease-in-out;
+}
+
+.menu>.menu-item>a {
+    color: rgb(196, 203, 210);
+    text-decoration: none;
+}
+
+.photo-container>img {
+    border-radius: 100%;
+    width: 200px;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    gap: 20px;
+    z-index: 5;
+}
+
+.background-personal {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/assets/988134.png);
+}
+/* #id{
+    width: inherit;
+    height: inherit;
+    background-color: #0202029d;
+    position: absolute;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+} */
+
+.my-info {
+    background-color: rgba(0, 0, 0, 0.794);
+    width: 400px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.my-name {
+    font-size: 24px;
+    margin: 10px 0px;
+    /* font-weight: 600; */
+    color: rgb(214, 221, 228);
+}
+
+.my-description {
+    padding: 15px;
+    color: rgb(214, 221, 228);
+    font-size: 20px;
+}
+
+.owl-limits {
+    margin: auto;
+}
+.skill-title{
+    width: 100%;
+    padding: 5px;
+    height: auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2%;
+}
+
+.soft-skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 2%;
+    /* align-items: center; */
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ul.skill-list {
+    padding: 0px;
+    margin: 15px 0px;
+    text-align: center;
+    padding-top: 15px;
+} */
+
+
+
+.skills {
+    /* display: flex;
+    flex-direction: row; */
+    gap: 20px;
+    padding: 5px 5px;
+    margin: 20px 0px;
+    /* justify-content: space-evenly; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skill-level {
+    width: 20%;
+    height: 20px;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.481);
+    background-color: rgba(0, 0, 0, 0.057);
+    border-radius: 3px;
+}
+
+div.skill-info>div>span {
+    font-size: 18px;
+}
+
+.skill-level-filled {
+    width: 20%;
+    height: 20px;
+    border: 0px;
+    border-style: solid;
+    background-color: rgba(41, 41, 41, 0.656);
+    border-radius: 3px;
+}
+
+.skill-level-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.projects-grid {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    /* justify-content: center; */
+    margin-bottom: 30px;
+    margin: 15px 0px;
+}
+
+.project {
+    margin: 0px 0px;
+    transition: all 0.15s ease-in-out;
+    transform: scale(1.0);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.project:hover {
+    transition: all 0.15s ease-in-out;
+    transform: scale(1.03);
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    background-position: center;
+    background-size: cover;
+    /* background-color: rgba(165, 42, 42, 0.306); */
+}
+
+.project-thumbnail>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.project-title {
+    background-color: rgba(0, 0, 0, 0.244);
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 0px;
+    border-radius: 5px;
+}
+
+.project-title>span>a {
+    text-decoration: none;
+    color: #191919;
+}
+.contact-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    padding: 5px;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.contact-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+.category-title{
+    width: 100%;
+    background-color: #19191941;
+    padding: 5px;
+    height: auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+@media screen and (max-width: 1920px) {}
+
+@media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1280px) {}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 960px) {}
+
+@media screen and (max-width: 800px) {
+    .container {
+        margin: 0px 10%;
+    }
+    .background-personal {
+        height: 100%;
+        margin-bottom: 20px;
+        padding: 10px 0px;
+    }
+
+    .my-info {
+        width: 90%;
+    }
+
+    .personal-info {
+        flex-direction: column;
+    }
+
+    .photo-container {
+        align-self: center;
+    }
+
+    .skills {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px 5px;
+        margin: 20px 0px;
+        justify-content: space-evenly;
+    }
+
+    .project {
+        width: 100%;
+        max-height: 300px;
+        margin: 5px 0px;
+    }
+
+    .projects-grid {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-title {
+        margin: 0px 0px;
+    }
+
+    
+
+    div.skill>div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 400px) {}
