@@ -100,5 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (lis.length > 0) {
         lis[0].classList.add('selected');
+        changeData(1);
     }
 });
