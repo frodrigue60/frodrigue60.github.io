@@ -3,256 +3,305 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/assets/OwlCarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/assets/OwlCarousel/assets/owl.theme.default.min.css">
-    <script src="/assets/jquery-3.6.4.min.js"></script>
-    <script src="/assets/OwlCarousel/owl.carousel.min.js"></script>
-    <title>Digital portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <nav>
-        <ul class="menu">
-            <li class="menu-item">
-                <a href="#skills">skills</a>
-            </li>
-            <li class="menu-item">
-                <a href="#projects">Projects</a>
-            </li>
-            <li class="menu-item">
-                <a href="#contact">Contact</a>
-            </li>
-
-        </ul>
-    </nav>
-    <div class="background-personal">
-        <div id="id">
-
+    <header id="header">
+        <nav class="navbar">
+            <ul>
+                <li class="active">
+                    <a href="#about-me">About me</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="patter-1">
         </div>
-        <div class="personal-info">
-            <div class="photo-container">
-                <img src="assets/akaza.png" alt="">
-            </div>
-            <div class="my-info">
-                <div class="my-name">
-                    <span>Hello, my name is <strong>Luis Rodriguez</strong>.</span>
+    </header>
+    <main>
+        <section id="about-me">
+            <header>
+                <h1 class="section-title">
+                    About me
+                </h1>
+            </header>
+            <article>
+                <header>
+                    Test
+                </header>
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet temporibus totam tenetur in sed
+                        fuga assumenda accusantium sit nostrum, cum libero corrupti commodi praesentium corporis
+                        similique id alias enim culpa?</p>
                 </div>
-                <div class="my-description">
-                    <p>I am a graduate of system engineering. I like to develop web applications with PHP (Laravel)
-                        using the MVC model. I always find myself available to learn new things that are useful for my
-                        personal and professional development.</p>
-                </div>
+            </article>
+        </section>
+        <section class="" id="skills">
+            <header>
+                <h2 class="section-title">Skills</h2>
+            </header>
+            <article class="">
+                <header class="">
+                    Hard Skills
+                </header>
+                <div class="grid-2">
+                    <div>
+                        <ul id="skill-list" class="skill-list">
+                            <!-- <li><button onclick=""><i class="fa-solid fa-square"></i> HTML5</button></li>
+                            <li><button onclick=""><i class="fa-solid fa-square"></i> CSS3</button></li>
+                            <li><button onclick=""><i class="fa-solid fa-square"></i> JavaScript</button></li>
+                            <li><button onclick=""><i class="fa-solid fa-square"></i> PHP</button></li>
+                            <li><button onclick=""><i class="fa-solid fa-square"></i> MySQL</button></li>
+                            <li><button onclick=""><i class="fa-solid fa-square"></i> PostgreSQL</button></li>
+                            <li><button onclick=""><i class="fa-solid fa-square"></i> GitHub</button></li>
+                            <li><button onclick=""><i class="fa-solid fa-square"></i> Laravel</button></li> -->
+                        </ul>
+                    </div>
+                    <div>
+                        <figure class="skill-img-container">
+                            <img id="img-hard-skill" class="img-hard-skill" src="" alt="">
+                        </figure>
+                        <hr>
+                        <div class="skill-info-container">
+                            <h3 id="data-title">Waiting data...</h3>
+                            <p id="data-description">Waiting data...</p>
+                        </div>
+                    </div>
+            </article>
+            <!-- <article class="grid-2">
+                    <figure>
+                        <img src="" alt="">
+                    </figure>
+                    <div>
+                        <ul class="skill-list">
+                            <li><i class="fa-solid fa-square"></i> Adaptability </li>
+                            <li><i class="fa-solid fa-square"></i> Communication </li>
+                            <li><i class="fa-solid fa-square"></i> Compromise</li>
+                            <li><i class="fa-solid fa-square"></i> Listening</li>
+                            <li><i class="fa-solid fa-square"></i> Work ethic</li>
+                            <li><i class="fa-solid fa-square"></i> Teamwork</li>
+                            <li><i class="fa-solid fa-square"></i> Problem-solving </li>
+                            <li><i class="fa-solid fa-square"></i> Conflict resolution</li>
+                            <li><i class="fa-solid fa-square"></i> Critical thinking</li>
+                        </ul>
+                    </div>
+                </article> -->
             </div>
-        </div>
+        </section>
+        <section class="" id="projects">
+            <header>
+                <h2 class="section-title">Projects</h2>
+            </header>
+            <div class="projects-container">
+                <article>
+                    <header>Project 1</header>
+                    <div class="project-thumb-container">
+                        <figure>
+                            <a href="#">
+                                <img class="project-thumb"
+                                    src="https://wallpaperboat.com/wp-content/uploads/2021/09/20/78678/waifu-18.jpg"
+                                    alt="">
+                            </a>
+                        </figure>
+                    </div>
+                    <footer>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </footer>
+                </article>
+                <article>
+                    <header>Project 2</header>
+                    <div class="project-thumb-container">
+                        <figure>
+                            <a href="#">
+                                <img class="project-thumb"
+                                    src="https://wallpaperboat.com/wp-content/uploads/2021/09/20/78678/waifu-18.jpg"
+                                    alt="">
+                            </a>
+                        </figure>
+                    </div>
+                    <footer>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </footer>
+                </article>
+                <article>
+                    <header>Project 3</header>
+                    <div class="project-thumb-container">
+                        <figure>
+                            <a href="#">
+                                <img class="project-thumb"
+                                    src="https://wallpaperboat.com/wp-content/uploads/2021/09/20/78678/waifu-18.jpg"
+                                    alt="">
+                            </a>
+                        </figure>
+                    </div>
+                    <footer>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </footer>
+                </article>
+                <article>
+                    <header>Project 4</header>
+                    <div class="project-thumb-container">
+                        <figure>
+                            <a href="#">
+                                <img class="project-thumb"
+                                    src="https://wallpaperboat.com/wp-content/uploads/2021/09/20/78678/waifu-18.jpg"
+                                    alt="">
+                            </a>
+                        </figure>
+                    </div>
+                    <footer>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </footer>
+                </article>
+            </div>
+        </section>
+        <section id="contact">
+            <header>
+                <h2 class="section-title">Contact</h2>
+            </header>
+            <form action="" class="box-shadow-1">
+                <div>
+                    <label for="email-input">Email</label>
+                    <br>
+                    <input type="email" name="" id="email-input">
+                </div>
+
+                <div>
+                    <label for="text-area">Message</label>
+                    <br>
+                    <textarea rows="3" name="" id="text-area"></textarea>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+    <div class="div-scroll-controlls">
+        <a href="#header" id="to-top" type="button"><i class="fa-solid fa-arrow-up-long"></i></a>
+        <a href="#footer" id="to-bottom" type="button"><i class="fa-solid fa-arrow-down-long"></i></a>
     </div>
-    <div class="container">
-        <div id="skills" class="category-title">
-            <span>Skills</span>
+    <footer id="footer">
+        <div class="patter-1">
         </div>
-        <div class="skills">
-            <div>
-                <div class="skill-title">
-                    <span>Hard Skills</span>
-                </div>
-                <div class="skill-list">
-                    <div class="skill-info">
-                        <div>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-level-container">
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level"></div>
-                        </div>
-                    </div>
-                    <div class="skill-info">
-                        <div>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-level-container">
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level"></div>
-                            <div class="skill-level"></div>
-                        </div>
-                    </div>
-                    <div class="skill-info">
-                        <div>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-level-container">
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level"></div>
-                            <div class="skill-level"></div>
-                            <div class="skill-level"></div>
-                            <div class="skill-level"></div>
-                        </div>
-                    </div>
-                    <div class="skill-info">
-                        <div>
-                            <span>PHP (Laravel)</span>
-                        </div>
-                        <div class="skill-level-container">
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level"></div>
-                            <div class="skill-level"></div>
-                        </div>
-                    </div>
-                    <div class="skill-info">
-                        <div>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-level-container">
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level"></div>
-                            <div class="skill-level"></div>
-                        </div>
-                    </div>
-                    <div class="skill-info">
-                        <div>
-                            <span>GIT</span>
-                        </div>
-                        <div class="skill-level-container">
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level skill-level-filled"></div>
-                            <div class="skill-level"></div>
-                            <div class="skill-level"></div>
-                            <div class="skill-level"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div>
-                <div class="skill-title">
-                    <span>Soft Skills</span>
-                </div>
-
-                <div class="soft-skill-list">
-                    <div>
-                        <span>Communication</span>
-                    </div>
-                    <div>
-                        <span>Integrity</span>
-                    </div>
-                    <div>
-                        <span>Critical thinking</span>
-                    </div>
-                    <div>
-                        <span>Problem resolution</span>
-                    </div>
-                    <div>
-                        <span>Teamwork</span>
-                    </div>
-                    <div>
-                        <span>Social commitment</span>
-                    </div>
-
-                    <div>
-                        <span>Constant and independent learning</span>
-                    </div>
-                </div>
-            </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <a class="no-deco" href="#">Created by <strong>Luis Rodz</strong></a>
         </div>
-        <div class="projects">
-            <div id="projects" class="category-title">
-                <span>Projects</span>
-            </div>
-            <div class="projects-grid">
-                <div class="project">
-                    <div class="project-thumbnail"
-                        style="background-image: url(https://cdn-developer-wp.arc.dev/wp-content/uploads/2022/06/coding-programming-project-ideas-1128x635.jpg);">
-                        <!-- <img src="https://cdn-developer-wp.arc.dev/wp-content/uploads/2022/06/coding-programming-project-ideas-1128x635.jpg"
-                            alt=""> -->
-                    </div>
-                    <div class="project-title">
-                        <span><a href="http://" target="_blank" rel="noopener noreferrer">A project title</a></span>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-thumbnail"
-                        style="background-image: url(https://blog.hyperiondev.com/wp-content/uploads/2018/10/Blog-Article-Programming-Projects.jpg);">
-                        <!-- <img src="https://blog.hyperiondev.com/wp-content/uploads/2018/10/Blog-Article-Programming-Projects.jpg"
-                            alt=""> -->
-                    </div>
-                    <div class="project-title">
-                        <span><a href="http://" target="_blank" rel="noopener noreferrer">A project title</a></span>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-thumbnail"
-                        style="background-image: url(https://www.springboard.com/blog/wp-content/uploads/2022/03/simple-calculator-1.png);">
-                        <!-- <img src="https://www.springboard.com/blog/wp-content/uploads/2022/03/simple-calculator-1.png"
-                            alt=""> -->
-                    </div>
-                    <div class="project-title">
-                        <span><a href="http://" target="_blank" rel="noopener noreferrer">A project title</a></span>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="project-thumbnail"
-                        style="background-image: url(https://miro.medium.com/v2/resize:fit:1400/0*p_fJnHsjtBlCF7jL.jpeg);">
-                        <!-- <img src="https://miro.medium.com/v2/resize:fit:1400/0*p_fJnHsjtBlCF7jL.jpeg" alt=""> -->
-                    </div>
-                    <div class="project-title">
-                        <span><a href="http://" target="_blank" rel="noopener noreferrer">A project title</a></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="contact" class="contact">
-            <div class="category-title">
-                <span>Contact</span>
-            </div>
-            <div class="contact-container">
-                <div class="contact-item">
-                    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="36" height="36"
-                        data-view-component="true" class="octicon octicon-mark-github v-align-middle">
-                        <path
-                            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-                        </path>
-                    </svg>
-                    <span>GitHub</span>
-                </div>
-                <div class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
-                        fill="currentColor" class="mercado-match" width="38" height="38" focusable="false">
-                        <path
-                            d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
-                        </path>
-                    </svg>
-                    <span>LinkedIn</span>
-                </div>
-                <div class="contact-item">
-                    <svg width="36" height="36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                        id="Layer_1" x="0px" y="0px" viewBox="0 0 30 30" enable-background="new 0 0 30 30"
-                        xml:space="preserve">
-                        <circle cx="15" cy="15" r="15" />
-                        <path id="f" fill="#FFFFFF"
-                            d="M16.4,23.9v-8.1h2.7l0.4-3.2h-3.1v-2c0-0.9,0.3-1.5,1.6-1.5l1.7,0V6.2c-0.3,0-1.3-0.1-2.4-0.1  c-2.4,0-4.1,1.5-4.1,4.2v2.3h-2.7v3.2h2.7v8.1H16.4z" />
-                    </svg>
-                    <span>Facebook</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <script>
-
-    </script>
-    <footer>
-
     </footer>
 </body>
+<script>
+    let data = [
+        {
+            id: 1,
+            title: 'HTML5',
+            description: 'Hypertext Markup Language (HTML) is the code used to structure and display a web page and its content.',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png',
+        },
+        {
+            id: 2,
+            title: 'CSS3',
+            description: 'CSS is a graphic design language that allows you to define and create the presentation of a structured document written in a markup language.',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/250px-CSS3_logo_and_wordmark.svg.png',
+        },
+        {
+            id: 3,
+            title: 'JavaScript (JS)',
+            description: 'JavaScript is a programming language that developers use to make web pages interactive.',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+        },
+        {
+            id: 4,
+            title: 'PHP',
+            description: 'PHP is a very popular open source language especially suitable for web development and can be embedded in HTML.',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png'
+        },
+        {
+            id: 5,
+            title: 'MySQL',
+            description: 'MySQL is an open source relational database management system (RDBMS) backed by Oracle and based on the Structured Query Language (SQL).',
+            img: 'https://cdn-icons-png.flaticon.com/512/5968/5968313.png'
+        },
+        {
+            id: 6,
+            title: 'PostgreSQL',
+            description: 'PostgreSQL is an open source database system that stands out for its adaptability and its compliance with the SQL standard.',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png'
+        },
+        {
+            id: 7,
+            title: 'GitHub',
+            description: 'GitHub is a forge for hosting projects using the Git version control system.',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg'
+        },
+        {
+            id: 8,
+            title: 'Laravel',
+            description: 'Laravel is an open source framework for developing web applications and services with PHP 5, PHP 7 and PHP 8. Its philosophy is to develop PHP code in an elegant and simple way, avoiding "spaghetti code".',
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png'
+        },
+    ];
+    let dataTitleDiv = document.querySelector('#data-title');
+    let dataDescriptionDiv = document.querySelector('#data-description');
+    let dataImg = document.querySelector('#img-hard-skill');
+
+    function changeData(id) {
+        let selectedObj = data.find(item => item.id === id);
+
+        if (selectedObj) {
+            dataTitleDiv.innerHTML = selectedObj.title;
+            dataDescriptionDiv.innerHTML = selectedObj.description;
+            dataImg.src = selectedObj.img;
+        }
+        let buttons = document.getElementsByTagName('button');
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        let list = document.getElementById('skill-list');
+
+        data.forEach(function (obj) {
+            let li = document.createElement('li');
+            let button = document.createElement('button');
+            button.setAttribute('onclick', 'changeData(' + obj.id + ')');
+
+            let icon = document.createElement('i');
+            icon.className = 'fa-solid fa-square';
+
+            let buttonText = document.createTextNode(' ' + obj.title);
+            button.appendChild(icon);
+            button.appendChild(buttonText);
+
+            li.appendChild(button);
+            list.appendChild(li);
+
+            button.addEventListener('click', function () {
+                let lis = document.getElementsByTagName('li');
+                for (let i = 0; i < lis.length; i++) {
+                    lis[i].classList.remove('selected');
+                }
+                li.classList.add('selected');
+            });
+        });
+    });
+</script>
 
 </html>
