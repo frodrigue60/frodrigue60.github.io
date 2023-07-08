@@ -125,6 +125,7 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: start;
+    transition: all 150ms ease-in-out;
 }
 
 .navbar ul>li:hover {
