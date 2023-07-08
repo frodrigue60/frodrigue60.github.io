@@ -47,6 +47,18 @@ let data = [
         description: 'Laravel is an open source framework for developing web applications and services with PHP 5, PHP 7 and PHP 8. Its philosophy is to develop PHP code in an elegant and simple way, avoiding "spaghetti code".',
         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png'
     },
+    {
+        id: 9,
+        title: 'Bootstrap 5',
+        description: 'Bootstrap is a cross-platform library or open source toolkit for designing web sites and web applications.',
+        img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png'
+    },
+    {
+        id: 10,
+        title: 'jQuery',
+        description: 'jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.',
+        img: 'https://cdn.icon-icons.com/icons2/2415/PNG/512/jquery_plain_wordmark_logo_icon_146445.png'
+    },
 ];
 let dataTitleDiv = document.querySelector('#data-title');
 let dataDescriptionDiv = document.querySelector('#data-description');
