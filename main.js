@@ -84,8 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
         li.appendChild(button);
         list.appendChild(li);
 
-
-
         button.addEventListener('click', function () {
             let lis = document.getElementsByTagName('li');
             for (let i = 0; i < lis.length; i++) {
@@ -99,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let lis = skillList.getElementsByTagName('li');
 
     if (lis.length > 0) {
-        lis[0].classList.add('selected');
+        /* lis[0].classList.add('selected'); */
         changeData(1);
     }
 });
