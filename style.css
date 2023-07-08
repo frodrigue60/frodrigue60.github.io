@@ -168,8 +168,11 @@ article>div>p {
 
 section>article {
     background-color: #D8D2BA;
-    box-shadow: 3px 3px 0 #4c49408c;
+    transition: all 150ms ease-in-out;
 }
+/* section>article:hover {
+    box-shadow: 4px 4px 0 #4c49408c;
+} */
 
 section#skills div.grid-2{
     padding: 5px;
@@ -270,9 +273,9 @@ hr{
     
     transition: all 150ms ease-in-out;
 }
-.projects-container article:hover{
-    box-shadow: 3px 3px 0 #4c49408c;
-}
+/* .projects-container article:hover{
+    box-shadow: 4px 4px 0 #4c49408c;
+} */
 
 .project-thumb-container {
     overflow: hidden;
