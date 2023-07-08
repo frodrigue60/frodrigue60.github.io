@@ -287,7 +287,7 @@ div.projects-container article header {
 }
 
 div.projects-container article img {
-    transform: scale(1.3);
+    transform: scale(1.1);
     filter: grayscale(.5) sepia(.5);
     transition: all 200ms ease-in-out;
 }
