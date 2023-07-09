@@ -82,16 +82,6 @@ function changeData(id) {
 
 }
 
-function loadContent(url) {
-    fetch(url)
-        .then(response => response.text())
-        .then(html => {
-            let mainContent = document.querySelector('main');
-            mainContent.innerHTML = html;
-        })
-        .catch(error => console.log(error));
-}
-
 document.addEventListener('DOMContentLoaded', function () {
 
 
@@ -120,26 +110,60 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             li.classList.add('selected');
             /* AUDIO */
-            playAudio(sound_3);
+            playAudio(sound_3, 0.3);
         });
 
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.keyCode === 9) { // Código de tecla para la tecla Tab
-                playAudio(sound_1);
+                playAudio(sound_1, 1);
             }
-          });
+        });
     });
 
     let skillList = document.getElementById('skill-list');
     let lis = skillList.getElementsByTagName('li');
 
     if (lis.length > 0) {
-        /* lis[0].classList.add('selected'); */
         changeData(1);
     }
-    function playAudio(audio) {
+    function playAudio(audio, volume) {
         audio.pause();
         audio.currentTime = 0;
+        audio.volume = volume;
         audio.play();
     }
+
+    let links = document.querySelectorAll('#menu a');
+
+    links.forEach(function (link) {
+        link.addEventListener('click', function () {
+            playAudio(sound_2, 1);
+        });
+    });
+
+    /* MODAL */
+
+    let openBtn = document.getElementById('openModal');
+    let modal = document.getElementById('myModal');
+    let closeBtn = document.getElementsByClassName('close')[0];
+
+    openBtn.addEventListener('click', function () {
+        playAudio(sound_4,0.3);
+        modal.style.display = 'block';
+        
+    });
+
+    closeBtn.addEventListener('click', function () {
+        playAudio(sound_1,1)
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target == modal) {
+            playAudio(sound_1,1)
+            modal.style.display = 'none';
+        }
+    });
+
+
 });

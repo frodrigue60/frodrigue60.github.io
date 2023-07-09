@@ -108,6 +108,10 @@ footer a {
     justify-content: start;
 }
 
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
 .navbar {
     border-bottom: solid 2px #4C4940;
 }
@@ -262,15 +266,17 @@ hr {
     justify-content: center;
     padding: 5px;
 }
+
 .skill-img-container img:hover {
     filter: sepia(0) grayscale(0);
 }
+
 .skill-img-container img {
     filter: sepia(.7) grayscale(.7);
     transition: all 200ms ease-in-out;
 }
 
-.skill-info-container{
+.skill-info-container {
     padding: 5px;
 }
 
@@ -441,6 +447,58 @@ form button:hover {
     border-top: solid 2px #4C4940;
 }
 
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #D3CEB5;
+    margin: 15% auto;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.modal-content header {
+    color: #D8D2BA;
+    background-color: #4C4940;
+}
+.modal-content header h2{
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 5px;
+}
+.btn-close-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.modal-content header span{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #e5e5e5;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 /* PROGRESS BAR */
 progress {
     background-color: #e5e5e5;
@@ -472,6 +530,10 @@ progress::-moz-progress-bar {
 } */
 @media screen and (max-width: 600px) {
     main {
+        width: 100%;
+    }
+
+    body {
         width: 100%;
     }
 
