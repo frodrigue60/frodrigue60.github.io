@@ -20,7 +20,8 @@ body * {
 
 body {
     background-color: #CAC5AD;
-    font-family: "Noto Sans", "Rodin";
+    /* font-family: "Noto Sans", "Rodin"; */
+    font-family: sans-serif;
     margin: 0 50px;
 }
 

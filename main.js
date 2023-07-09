@@ -64,6 +64,12 @@ let dataTitleDiv = document.querySelector('#data-title');
 let dataDescriptionDiv = document.querySelector('#data-description');
 let dataImg = document.querySelector('#img-hard-skill');
 
+let sound_1 = new Audio('/assets/sounds/menu-2.ogg');
+let sound_2 = new Audio('/assets/sounds/menu-1.ogg');
+let sound_3 = new Audio('/assets/sounds/menu-select-1.ogg');
+let sound_4 = new Audio('/assets/sounds/menu-select-2.ogg');
+
+
 function changeData(id) {
     let selectedObj = data.find(item => item.id === id);
 
@@ -74,6 +80,16 @@ function changeData(id) {
     }
     let buttons = document.getElementsByTagName('button');
 
+}
+
+function loadContent(url) {
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            let mainContent = document.querySelector('main');
+            mainContent.innerHTML = html;
+        })
+        .catch(error => console.log(error));
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -96,13 +112,22 @@ document.addEventListener('DOMContentLoaded', function () {
         li.appendChild(button);
         list.appendChild(li);
 
+
         button.addEventListener('click', function () {
             let lis = document.getElementsByTagName('li');
             for (let i = 0; i < lis.length; i++) {
                 lis[i].classList.remove('selected');
             }
             li.classList.add('selected');
+            /* AUDIO */
+            playAudio(sound_3);
         });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode === 9) { // Código de tecla para la tecla Tab
+                playAudio(sound_1);
+            }
+          });
     });
 
     let skillList = document.getElementById('skill-list');
@@ -111,5 +136,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (lis.length > 0) {
         /* lis[0].classList.add('selected'); */
         changeData(1);
+    }
+    function playAudio(audio) {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.play();
     }
 });
