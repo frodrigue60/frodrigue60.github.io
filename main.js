@@ -64,6 +64,7 @@ let dataTitleDiv = document.querySelector('#data-title');
 let dataDescriptionDiv = document.querySelector('#data-description');
 let dataImg = document.querySelector('#img-hard-skill');
 
+let sound_0 = new Audio('/assets/sounds/core_71.wav');
 let sound_1 = new Audio('/assets/sounds/menu-2.ogg');
 let sound_2 = new Audio('/assets/sounds/menu-1.ogg');
 let sound_3 = new Audio('/assets/sounds/menu-select-1.ogg');
@@ -74,7 +75,7 @@ function changeData(id) {
     let selectedObj = data.find(item => item.id === id);
 
     if (selectedObj) {
-        dataTitleDiv.innerHTML = selectedObj.title;
+        dataTitleDiv.innerHTML = '[' + selectedObj.title + ']';
         dataDescriptionDiv.innerHTML = selectedObj.description;
         dataImg.src = selectedObj.img;
     }
@@ -148,22 +149,37 @@ document.addEventListener('DOMContentLoaded', function () {
     let closeBtn = document.getElementsByClassName('close')[0];
 
     openBtn.addEventListener('click', function () {
-        playAudio(sound_4,0.3);
+        playAudio(sound_4, 0.3);
         modal.style.display = 'block';
-        
     });
 
     closeBtn.addEventListener('click', function () {
-        playAudio(sound_1,1)
+        playAudio(sound_0, 1)
         modal.style.display = 'none';
     });
 
     window.addEventListener('click', function (event) {
         if (event.target == modal) {
-            playAudio(sound_1,1)
+            playAudio(sound_0, 1)
             modal.style.display = 'none';
         }
     });
 
+    let formCancelBtn = document.querySelector('#cancel');
+    let formSubmitBtn = document.querySelector('#submit');
+    let form = document.querySelector('form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        formCancelBtn.addEventListener('click', function () {
+            playAudio(sound_0, 1)
+            modal.style.display = 'none';
+        });
+        formSubmitBtn.addEventListener('click', function () {
+            playAudio(sound_3, 0.3)
+            modal.style.display = 'none';
+        });
+    });
 
 });
