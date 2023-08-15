@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <section class="d-flex col gap-2">
+            <div class="d-flex col">
+                <label for="link-to-file">Direct link to file</label>
+                <input type="text" name="link" id="link-to-file" placeholder="Link to file">
+            </div>
+            <div class="d-flex col">
+                <label for="display-title">Text for the button</label>
+                <input type="text" name="title" id="display-title" placeholder="Title">
+            </div>
+            <div class="d-flex col">
+                <label for="select-color-bg">Select color for the button</label>
+                <input type="color" id="select-color-bg" name="head" value="#FFFFFF" />
+            </div>
+            <div class="d-flex col">
+                <label for="select-color-text">Select color for the text</label>
+                <input type="color" id="select-color-text" name="head" value="#222222" />
+            </div>
+
+            <div class="d-flex">
+                <button class="" type="button" onclick="generateButton()">Generate</button>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <header>
+                <h3>Preview</h3>
+            </header>
+            <div id="preview-container">
+                <span>No button generated</span>
+            </div>
+        </section>
+        <hr>
+        <section class="code-container">
+            <header>
+                <h3>Code</h3>
+            </header>
+            <div>
+                <button onclick="copyCode()">Copy to clipboard</button>
+            </div>
+            <pre class="pre-container" id="pre-container">
+
+            </pre>
+        </section>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

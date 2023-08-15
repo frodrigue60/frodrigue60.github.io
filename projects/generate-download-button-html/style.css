@@ -1,0 +1,45 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.d-flex{
+    display: flex;
+}
+.col{
+    flex-direction: column;
+}
+.w-100{
+    width: 100%;
+}
+.gap-1{
+    gap: .25em;
+}
+.gap-2{
+    gap: .50em;
+}
+.gap-3{
+    gap: .75em;
+}
+.gap-4{
+    gap: 1em;
+}
+
+.pre-container {
+    background-color: #222222;
+    color: aliceblue;
+    padding: .5em;
+    font-size: 1.2em;
+    margin: 0;
+    overflow-x:scroll;
+}
+
+.code-container div {
+    display: flex;
+    justify-content: end;
+    background-color: #222222;
+}
+
+#preview-container{
+    display: flex;
+    flex-wrap: wrap;
+}
