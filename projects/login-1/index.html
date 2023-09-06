@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gradient">
+    <!-- <video id="video-bg" autoplay loop muted src="bg.mp4"></video> -->
+    <div class="container">
+        <div class="form-container">
+            <div class="profile-default-thumb">
+                <img src="./assets/default-avatar-profile-vector.webp"
+                    alt="">
+            </div>
+            <form id="form" action="#" method="post">
+                <div class="input-group-login">
+                    <div class="input">
+                        <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                        <input type="text" name="email" id="email" placeholder="Email" autocomplete="email">
+                    </div>
+                    <span id="warnEmail" hidden><i class="fa-solid fa-circle-exclamation"></i> Email is required</span>
+                    <div class="input">
+                        <label for="password"><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" name="password" id="password" placeholder="Password" autocomplete="current-password">
+                        <button id="showPassword" class=""><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <span id="warnPassword" hidden><i class="fa-solid fa-circle-exclamation"></i> Password is required</span>
+                </div>
+                
+                <div class="footer-form">
+                    <div>
+                        <input type="checkbox" name="remember" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a class="no-deco" href="#" rel="noopener noreferrer">Forgot Password</a>
+                </div>
+                <div class="button-container">
+                    <button id="loginbtn" class="btn" onclick="login()">Login</button>
+                    <button id="registerBtn" class="btn" onclick="register()">Register</button>
+                </div>
+            </form>
+            <hr>
+            <div class="button-footer-container">
+                    <button onclick="loginGoogle()" class="btn">Google <i class="fa-brands fa-google"></i></button>
+                    <button onclick="loginGithub()" class="btn">GitHub <i class="fa-brands fa-github"></i></i></button>
+                    <button onclick="loginFacebook()" class="btn">Facebook <i class="fa-brands fa-facebook"></i></i></button>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
