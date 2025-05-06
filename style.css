@@ -395,7 +395,12 @@ div.projects-container article:hover img {
 .project-thumb {
     width: 100%;
     height: auto;
+    /* transform: scale(1.2); */
 }
+
+/* img .project-thumb {
+    transform: scale(1.5);
+} */
 
 form {
     /* border: solid 1px #00a0e3; */
