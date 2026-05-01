@@ -68,7 +68,7 @@ Continuous deployment is managed through **GitHub Pages** via GitHub Actions. Th
 Deployment Process:
 1. Commit and push modifications to the `main` branch.
 2. Monitor progress within the **Actions** tab of the GitHub repository.
-3. Upon completion, the application is accessible at `https://frodrigue60.github.io`.
+3. Upon completion, the application is accessible at the designated GitHub Pages URL associated with the repository.
 
 ## License
 
