@@ -72,17 +72,33 @@
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             const lang = btn.getAttribute('data-lang');
+            if (!splash || !lang) return;
+
             localStorage.setItem('preferred-lang', lang);
             
             // Dispatch event for other components (like Navbar)
             window.dispatchEvent(new Event('lang-changed'));
             
-            // Add a simple fade out effect
+            // Navigate based on selected language
+            const currentPath = window.location.pathname;
+            let purePath = currentPath;
+            if (currentPath.startsWith('/es/')) {
+                purePath = currentPath.replace('/es/', '/');
+            } else if (currentPath === '/es') {
+                purePath = '/';
+            }
+            
+            const targetUrl = lang === 'en' ? purePath : `/es${purePath === '/' ? '' : purePath}`;
+            
             splash.style.opacity = '0';
             splash.style.transition = 'opacity 0.5s ease';
             
             setTimeout(() => {
-                splash.style.display = 'none';
+                if (window.location.pathname !== targetUrl) {
+                    window.location.href = targetUrl;
+                } else {
+                    splash.style.display = 'none';
+                }
             }, 500);
         });
     });
