@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+import PageDecor from "../components/PageDecor.astro";
+
 interface Props {
   title: string;
   description?: string;
@@ -34,6 +36,7 @@ const metaDescription = description || t('site.description');
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body class="scanlines">
+    <PageDecor lang={lang} />
     <Navbar />
     <slot />
     <Footer />

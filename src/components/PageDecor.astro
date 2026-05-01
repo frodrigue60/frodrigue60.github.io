@@ -1,0 +1,98 @@
+---
+const { lang = 'en' } = Astro.props;
+---
+
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden hidden lg:block">
+  <!-- Scanning Line -->
+  <div class="absolute inset-0 z-10 overflow-hidden">
+    <div class="w-full h-[2px] bg-[#3B3B3B]/5 shadow-[0_0_15px_rgba(59,59,59,0.1)] scanline-anim"></div>
+  </div>
+
+  <!-- Outer Frame Border -->
+  <div class="absolute inset-4 border border-[#3B3B3B]/5 pointer-events-none"></div>
+
+  <!-- Left Side Decor -->
+  <div class="absolute left-4 top-0 bottom-0 w-8 border-l border-[#3B3B3B]/10 flex flex-col justify-between py-24">
+    <div class="flex flex-col gap-8">
+      {Array.from({ length: 12 }).map((_, i) => (
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-[1px] bg-[#3B3B3B]/20"></div>
+          <span class="text-[8px] font-technical text-[#3B3B3B]/30">{String(i + 1).padStart(2, '0')}</span>
+        </div>
+      ))}
+    </div>
+    <div class="rotate-[-90deg] origin-left translate-x-4 mb-24 whitespace-nowrap flex items-center gap-2">
+      <div class="w-1.5 h-1.5 rounded-full bg-[#8A9A5B]/40 pulse-anim"></div>
+      <span class="text-[9px] font-technical text-[#3B3B3B]/20 tracking-[0.3em] uppercase">SYSTEM_ARCH_LOG // {lang === 'es' ? 'PROTOCOLO_ACTIVO' : 'ACTIVE_PROTOCOL'}</span>
+    </div>
+  </div>
+
+  <!-- Right Side Decor -->
+  <div class="absolute right-4 top-0 bottom-0 w-8 border-r border-[#3B3B3B]/10 flex flex-col justify-between py-24 items-end">
+    <div class="flex flex-col gap-8 items-end">
+      {Array.from({ length: 12 }).map((_, i) => (
+        <div class="flex items-center gap-2">
+          <span class="text-[8px] font-technical text-[#3B3B3B]/30">{String(12 - i).padStart(2, '0')}</span>
+          <div class="w-2 h-[1px] bg-[#3B3B3B]/20"></div>
+        </div>
+      ))}
+    </div>
+    <div class="rotate-[90deg] origin-right -translate-x-4 mb-24 whitespace-nowrap">
+      <span class="text-[9px] font-technical text-[#3B3B3B]/20 tracking-[0.3em] uppercase">COORDS_SCAN: {lang === 'es' ? 'NÚCLEO_ESTABLE' : 'CORE_STABLE'}</span>
+    </div>
+  </div>
+
+  <!-- Corner Metadata -->
+  <!-- Top Left -->
+  <div class="absolute top-24 left-12">
+    <div class="flex flex-col">
+      <span class="text-[8px] font-technical text-[#3B3B3B]/40 uppercase tracking-tighter">LOC: SV_CENTER</span>
+      <span class="text-[8px] font-technical text-[#3B3B3B]/40 uppercase tracking-tighter">UID: 0x4F92A</span>
+    </div>
+  </div>
+
+  <!-- Top Right -->
+  <div class="absolute top-24 right-12 text-right">
+    <div class="flex flex-col">
+      <span class="text-[8px] font-technical text-[#3B3B3B]/40 uppercase tracking-tighter">TERM: RX_LINK</span>
+      <span class="text-[8px] font-technical text-[#3B3B3B]/40 uppercase tracking-tighter">FRQ: 60Hz</span>
+    </div>
+  </div>
+
+  <!-- Bottom Left -->
+  <div class="absolute bottom-24 left-12">
+    <div class="flex flex-col">
+      <span class="text-[8px] font-technical text-[#3B3B3B]/40 uppercase tracking-tighter">VER: 2.5.0</span>
+      <span class="text-[8px] font-technical text-[#3B3B3B]/40 uppercase tracking-tighter">© 2026</span>
+    </div>
+  </div>
+
+  <!-- Bottom Right -->
+  <div class="absolute bottom-24 right-12 text-right flex flex-col items-end gap-1">
+    <div class="flex items-center gap-2">
+      <span class="text-[8px] font-technical text-[#3B3B3B]/40 uppercase tracking-tighter">STATUS: OK</span>
+      <div class="w-1 h-1 rounded-full bg-[#8A9A5B]/60 pulse-anim"></div>
+    </div>
+    <span class="text-[8px] font-technical text-[#3B3B3B]/40 uppercase tracking-tighter">ENCRYPTION: AES-256</span>
+  </div>
+</div>
+
+<style>
+  .scanline-anim {
+    animation: scanline 8s linear infinite;
+  }
+  
+  .pulse-anim {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes scanline {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100vh); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.8); }
+  }
+</style>
