@@ -1,0 +1,76 @@
+:root {
+  --bg-color: #cdc9b0;
+  --text-color: #3b3b3b;
+  --text-muted: #454545;
+  --accent-color: #8a9a5b;
+  --accent-glow: rgba(138, 154, 91, 0.3);
+  --card-bg: #d2ceb6;
+  --outline-color: #3b3b3b;
+  --glass-border: rgba(59, 59, 59, 0.15);
+
+  /* Typography */
+  --font-display: "IBM Plex mono", monospace;
+  --font-technical: "IBM Plex Mono", monospace;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(
+      0deg,
+      transparent 24%,
+      rgba(59, 59, 59, 0.05) 25%,
+      rgba(59, 59, 59, 0.05) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(59, 59, 59, 0.05) 75%,
+      rgba(59, 59, 59, 0.05) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      rgba(59, 59, 59, 0.05) 25%,
+      rgba(59, 59, 59, 0.05) 26%,
+      transparent 27%,
+      transparent 74%,
+      rgba(59, 59, 59, 0.05) 75%,
+      rgba(59, 59, 59, 0.05) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 50px 50px;
+}
+
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+  z-index: 50;
+  background-size:
+    100% 2px,
+    3px 100%;
+  pointer-events: none;
+}
+
+.dotted-bg {
+  background-image: radial-gradient(var(--text-muted) 1px, transparent 1px);
+  background-size: 4px 4px;
+}

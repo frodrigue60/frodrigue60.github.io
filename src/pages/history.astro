@@ -1,0 +1,174 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const experience = [
+  {
+    title: "Full Stack Developer",
+    company: "PROJECT: ANIRANK (Modern)",
+    period: "Q1 2026 - PRESENT",
+    location: "REMOTE",
+    tasks: [
+      "Architecture and development of a comprehensive community music discovery platform using Go, Svelte, and PostgreSQL.",
+      "Engineered high-concurrency backend systems for real-time ranking and vote processing.",
+      "Optimized data flow using a decoupled reactive architecture and SQLX for high-performance interactions.",
+      "Implemented sessions, authentication, roles, and permissions using JWT tokens and custom middleware.",
+    ],
+    tags: ["GO", "REST API", "FIBER", "SQLX", "JWT", "POSTGRES", "SVELTE", "TailwindCSS"]
+  },
+  {
+    title: "Systems Engineer",
+    company: "PROJECT: CHECK-IN SYSTEM",
+    period: "Q1 2026",
+    location: "REMOTE",
+    tasks: [
+      "Design of an employee attendance system focused on temporal and geographical precision, and data integrity.",
+      "Developed a robust REST API with critical endpoints for real-time management of clock-ins, lunch breaks, and incidents.",
+      "Implemented optimized workflows to offer flexibility in schedules and attendance management.",
+      "Architecture and implementation of an authentication, authorization, and role management system with JWT tokens and custom middleware.",
+    ],
+    tags: ["GO", "REST API", "FIBER", "SQLX", "JWT", "POSTGRES", "SVELTE", "TailwindCSS"]
+  },
+  {
+    title: "Desktop Software Developer",
+    company: "PROJECT: OWOWERLAYS",
+    period: "Q4 2025 - Q1 2026",
+    location: "WINDOWS_OS",
+    tasks: [
+      "Development of a lightweight desktop application for advanced Windows UI customization.",
+      "Low-level graphic rendering using C# and GDI+ for high-performance visual processing.",
+      "System-level persistence management and resource optimization for latency-free execution.",
+      "Performance optimization to ensure a smooth, uninterrupted experience with minimal resource consumption."
+    ],
+    tags: ["C#", ".NET", "WINFORMS", "GDI+"]
+  },
+  {
+    title: "Frontend Architect",
+    company: "PROJECT: NGO ASAOSA WEB",
+    period: "Q4 2025 - Q1 2026",
+    location: "WEB_STATIC",
+    tasks: [
+      "Development of a high-performance website for a non-profit organization using Eleventy and Nunjucks as the template engine.",
+      "Advanced SEO strategies and scores of 90-100 in Web Vitals performance metrics.",
+      "Modular and maintainable component architecture through modern static site generation.",
+      "Use of modern technologies for high-performance static site development."
+    ],
+    tags: ["ELEVENTY", "NUNJUCKS","HTML5","CSS3","JAVASCRIPT", "TAILWIND_CSS"]
+  },
+  {
+    title: "Full Stack Developer",
+    company: "PROJECT: ANIRANK (LEGACY)",
+    period: "2022 - Q1 2026",
+    location: "REMOTE",
+    tasks: [
+      "Architecture and development of a comprehensive community music discovery platform using the PHP framework, Laravel.",
+      "Database query optimization to improve performance and scalability.",
+      "Utilized Blade and Livewire on the client side for asynchronous interaction with the backend.",
+      "Development of a PHP-based MVC architecture.",
+    ],
+    tags: ["PHP", "LARAVEL", "POSTGRESQL", "MVC", "LIVEWIRE"]
+  },
+  {
+    title: "Extensions Developer",
+    company: "CHROME EXTENSIONS",
+    period: "Q4 2025",
+    location: "GOOGLE CHROME",
+    tasks: [
+      "Development of a browser extension for cleaning social media interfaces.",
+      "Dynamic script injection and DOM manipulation to hide specific interface elements.",
+      "Flexibility in extension configuration and elements to be hidden."
+    ],
+    tags: ["JAVASCRIPT", "CHROME_EXT"]
+  }
+];
+
+---
+
+<Layout title={`${t('page.history.title')} | NEURAL_LINK`}>
+  <main class="flex-grow max-w-[1000px] w-full mx-auto px-8 py-12 flex flex-col gap-12 min-h-[calc(100vh-130px)]">
+    <!-- Header -->
+    <header class="mb-8 border-b-2 border-[#3B3B3B] pb-8 relative ui-bracket-tl">
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+        <div>
+          <h1 class="text-5xl font-display text-[#3B3B3B] mb-2 uppercase">{t('page.history.title')}</h1>
+          <p class="font-technical text-[12px] text-[#3B3B3B]/60 flex items-center gap-2 uppercase tracking-widest">
+            <span class="material-symbols-outlined text-[16px]">terminal</span>
+            {t('page.history.records')}
+          </p>
+        </div>
+        <div class="flex flex-col items-end gap-2 font-technical">
+          <span class="text-[10px] font-bold bg-[#8A9A5B]/20 text-[#8A9A5B] px-2 py-1 border border-[#8A9A5B]/30 uppercase">{t('page.history.status')}</span>
+          <span class="text-[10px] font-bold text-[#3B3B3B]/60 uppercase">{t('page.history.entries')}</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Timeline Container -->
+    <div class="relative pl-12 before:absolute before:inset-y-0 before:left-[23px] before:w-[2px] before:bg-[#3B3B3B]/20">
+      {experience.map((entry, index) => (
+        <div class="relative mb-16 group">
+          <!-- Timeline Node -->
+          <div class="absolute -left-[45px] top-1 w-6 h-6 bg-[#CDC9B0] border-2 border-[#3B3B3B] flex items-center justify-center group-hover:bg-[#3B3B3B] transition-colors duration-200">
+            <div class="w-2 h-2 bg-[#3B3B3B] group-hover:bg-[#CDC9B0] transition-colors duration-200"></div>
+          </div>
+          <!-- Connection Line -->
+          <div class="absolute -left-[21px] top-4 w-6 h-[1px] bg-[#3B3B3B]/40"></div>
+          
+          <!-- Content Card -->
+          <div class="border border-[#3B3B3B] bg-[#D2CEB6]/10 p-6 ml-4 transition-all duration-200 hover:border-[#3B3B3B] hover:shadow-[8px_8px_0px_0px_rgba(59,59,59,0.1)] relative">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-6 pb-4 border-b border-[#3B3B3B]/20 border-dotted gap-4">
+              <div>
+                <h2 class="text-2xl font-technical font-bold text-[#3B3B3B] uppercase">{entry.title}</h2>
+                <h3 class="font-technical text-[13px] font-bold text-[#3B3B3B]/60 mt-1 uppercase tracking-tight">{entry.company}</h3>
+              </div>
+              <div class="text-left md:text-right font-technical">
+                <span class="text-[10px] font-bold border border-[#3B3B3B] px-2 py-1 bg-[#CDC9B0] inline-block mb-1 uppercase tracking-wider">{entry.period}</span>
+                <p class="text-[10px] text-[#3B3B3B]/50 font-bold uppercase tracking-widest">{t('page.history.loc')}{entry.location}</p>
+              </div>
+            </div>
+            
+            <ul class="space-y-3 font-body text-sm text-[#3B3B3B]/80">
+              {entry.tasks.map(task => (
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-[16px] text-[#8A9A5B] mt-0.5">radio_button_checked</span>
+                  <span>{task}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-6 pt-4 border-t border-[#3B3B3B]/10 flex gap-2 flex-wrap">
+              {entry.tags.map(tag => (
+                <span class="font-technical text-[9px] font-bold px-2 py-0.5 border border-[#3B3B3B]/20 bg-[#D2CEB6]/20 text-[#3B3B3B] uppercase tracking-tighter">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .font-technical { font-family: var(--font-technical); }
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+
+  .ui-bracket-tl {
+    position: relative;
+  }
+  .ui-bracket-tl::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 24px;
+    height: 24px;
+    border-top: 2px solid #3B3B3B;
+    border-left: 2px solid #3B3B3B;
+  }
+</style>

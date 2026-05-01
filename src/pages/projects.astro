@@ -1,0 +1,219 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import AnirankThumb from "../images/thumbnail-anirank.png";
+import AsaosaThumb from "../images/thumbnail-asaosa.png";
+import OwOverlaysThumb from "../images/thumbnail-owoverlays.png";
+import SectionHidderThumb from "../images/thumbnail-section-hidder.png";
+import AnirankLegacyThumb from "../images/thumbnail-anirank-legacy.png";
+import CheckinThumb from "../images/thumbnail-check-in.png";
+import MuricaStoreThumb from "../images/thumbnail-murica-store.png";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projects = [
+  {
+    title: "Anirank",
+    description:
+      "Web platform for listen, rate and discover music from anime series.",
+    tags: [
+      "Svelte",
+      "Tailwind",
+      "Golang",
+      "Fiber",
+      "Postgres",
+      "REST API",
+      "SQLX",
+    ],
+    image: AnirankThumb.src,
+    icon: "code",
+    url: "https://github.com/frodrigue60/Anirank",
+  },
+  {
+    title: "Asaosa",
+    description: "Website for Asaosa NGO.",
+    tags: ["HTML", "CSS", "JavaScript", "Nunjucks", "Tailwind"],
+    image: AsaosaThumb.src,
+    icon: "globe",
+    url: "https://github.com/frodrigue60/asaosa-landing",
+  },
+  {
+    title: "Murica Store",
+    description: "E-commerce for selling t-shirts and other merch.",
+    tags: [
+      "NextJS",
+      "Tailwind",
+      "NestJS",
+      "Postgres",
+      "JWT",
+      "TurboRepo",
+      "Docker",
+      "REST API",
+    ],
+    image: MuricaStoreThumb.src,
+    icon: "shopping_cart",
+    url: "https://github.com/frodrigue60/muricashirts-com",
+  },
+  {
+    title: "Check-in System",
+    description: "System that allows managing daily employee check-ins.",
+    tags: [
+      "SvelteKit",
+      "TypeScript",
+      "Tailwind",
+      "Bun",
+      "Go",
+      "Postgres",
+      "Fiber",
+      "SQLX",
+      "REST API",
+    ],
+    image: CheckinThumb.src,
+    icon: "code",
+    url: "https://github.com/frodrigue60/checkin-system",
+  },
+  {
+    title: "OwOverlays",
+    description:
+      "A desktop application built with C# that lets you place fully customizable overlays on your screen.",
+    tags: ["C#", "WinForms", "GDI", ".NET 9"],
+    image: OwOverlaysThumb.src,
+    icon: "monitor",
+    url: "https://github.com/frodrigue60/OwOverlays",
+  },
+  {
+    title: "FB/X Section Hider",
+    description:
+      "A chrome extension that lets you hide sections of your screen.",
+    tags: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
+    image: SectionHidderThumb.src,
+    icon: "extension",
+    url: "https://github.com/frodrigue60/SectionHidder",
+  },
+  {
+    title: "Anirank (legacy)",
+    description:
+      "Web platform for listen, rate and discover music from anime series.",
+    tags: ["PHP", "Laravel", "Livewire", "Tailwind", "MySQL/Postgres", "MVC"],
+    image: AnirankLegacyThumb.src,
+    icon: "code",
+    url: "https://github.com/frodrigue60/Anirank-legacy",
+  },
+];
+---
+
+<Layout title="Projects | NEURAL_LINK">
+  <main
+    class="flex-grow max-w-[1280px] w-full mx-auto px-6 py-12 flex flex-col gap-12 min-h-[calc(100vh-130px)]"
+  >
+    <!-- Page Header -->
+    <header class="border-b-2 border-[#3B3B3B] pb-6 relative">
+      <div
+        class="absolute top-0 right-0 border-l border-b border-[#3B3B3B] w-6 h-6 -mt-[1px] -mr-[1px]"
+      >
+      </div>
+      <h1 class="text-5xl font-display text-[#3B3B3B] mb-2 uppercase">
+        {t("page.projects.title")}
+      </h1>
+      <p
+        class="font-technical text-[12px] text-[#3B3B3B]/60 flex items-center gap-2 uppercase tracking-widest"
+      >
+        <span class="material-symbols-outlined text-[16px]">folder_open</span>
+        {t("page.projects.archive").replace("{n}", projects.length.toString())}
+      </p>
+    </header>
+
+    <!-- Project Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project, index) => (
+          <article class="border border-[#3B3B3B] bg-[#D2CEB6]/10 relative group transition-all hover:bg-[#D2CEB6]/20 flex flex-col h-full">
+            <div class="border-b border-[#3B3B3B] p-2 flex justify-between items-center bg-[#D2CEB6]/30">
+              <span class="text-[10px] font-bold text-[#3B3B3B] font-technical">
+                {`SYS_${(index + 1).toString().padStart(2, "0")}`}
+              </span>
+              <span class="material-symbols-outlined text-[14px] text-[#3B3B3B]">
+                {project.icon}
+              </span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between gap-4">
+              <div class="flex flex-col">
+                <div class="aspect-video w-full border border-[#3B3B3B] bg-[#3B3B3B]/5 relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply transition-all group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                  <div class="absolute inset-0 border border-[#3B3B3B]/20 m-2 pointer-events-none" />
+                  <div class="absolute top-2 left-2 bg-[#CDC9B0] text-[#3B3B3B] text-[8px] font-bold px-2 py-0.5 border border-[#3B3B3B] font-technical uppercase">
+                    {t("page.projects.active_link")}
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <h2 class="text-xl font-technical font-bold text-[#3B3B3B] mb-1 uppercase">
+                    {project.title}
+                  </h2>
+                  <p class="text-sm text-[#3B3B3B]/70 font-body line-clamp-2">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+              <div class=" flex flex-col">
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  {project.tags.map((tag) => (
+                    <span class="border border-[#3B3B3B]/30 px-2 py-0.5 font-technical text-[9px] font-bold text-[#3B3B3B] bg-[#D2CEB6]/20 uppercase">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-4 border border-[#3B3B3B] px-4 py-2 font-technical text-[11px] font-bold uppercase text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors relative flex justify-between items-center group/btn"
+                >
+                  {t("page.projects.view_project")}
+                  <span class="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">
+                    arrow_forward
+                  </span>
+                  <span class="absolute top-1 right-1 font-technical text-[7px] opacity-30">
+                    [ 0{index + 1} ]
+                  </span>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+
+      <!-- Placeholder / New Entry -->
+      <article
+        class="border border-[#3B3B3B]/20 border-dashed bg-[#D2CEB6]/5 relative flex flex-col items-center justify-center p-12 text-[#3B3B3B]/30 group hover:border-[#3B3B3B]/40 transition-all cursor-pointer"
+      >
+        <span
+          class="material-symbols-outlined text-4xl mb-4 group-hover:scale-110 transition-transform"
+          >add_box</span
+        >
+        <span
+          class="text-[10px] font-bold font-technical uppercase tracking-tighter"
+          >{t("page.projects.add_new")}</span
+        >
+        <div class="absolute inset-0 dotted-bg opacity-20 pointer-events-none">
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .font-technical {
+    font-family: var(--font-technical);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+</style>

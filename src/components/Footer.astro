@@ -1,0 +1,22 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<footer class="bg-[#CDC9B0] text-[#3B3B3B] docked full-width border-t-2 border-[#3B3B3B] flex flex-col md:flex-row justify-between items-center w-full px-12 py-10 gap-4 mt-auto">
+    <div class="font-serif text-[9px] tracking-[0.2em] uppercase font-bold text-[#3B3B3B]">
+        [ 2024 ] PORTFOLIO // {t("footer.status")}
+    </div>
+    <nav class="flex gap-6">
+        <a class="font-serif text-[9px] tracking-[0.2em] uppercase text-[#3B3B3B]/50 hover:text-[#3B3B3B] hover:bg-[#3B3B3B]/10 px-2 py-1 transition-colors" href="#">{t("footer.links")}</a>
+        <a class="font-serif text-[9px] tracking-[0.2em] uppercase text-[#3B3B3B]/50 hover:text-[#3B3B3B] hover:bg-[#3B3B3B]/10 px-2 py-1 transition-colors" href="#">{t("footer.social")}</a>
+        <a class="font-serif text-[9px] tracking-[0.2em] uppercase text-[#3B3B3B]/50 hover:text-[#3B3B3B] hover:bg-[#3B3B3B]/10 px-2 py-1 transition-colors" href="#">{t("footer.github")}</a>
+    </nav>
+</footer>
+
+<style>
+    footer {
+        font-family: var(--font-technical);
+    }
+</style>

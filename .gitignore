@@ -1,0 +1,8 @@
+/mockups
+/node_modules
+.astro/
+dist/
+.vscode/
+.DS_Store
+DESIGN.md
+/legacy-code

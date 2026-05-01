@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t('page.contact.title')} | NEURAL_LINK`}>
+  <main class="flex-grow flex flex-col items-center justify-center px-6 py-12 relative z-10 w-full max-w-[1280px] mx-auto min-h-[calc(100vh-130px)]">
+    <!-- Decorative Brackets Wrapper -->
+    <div class="relative w-full max-w-2xl">
+      <!-- Brackets -->
+      <div class="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-[#3B3B3B] pointer-events-none"></div>
+      <div class="absolute -top-4 -right-4 w-8 h-8 border-t-2 border-r-2 border-[#3B3B3B] pointer-events-none"></div>
+      <div class="absolute -bottom-4 -left-4 w-8 h-8 border-b-2 border-l-2 border-[#3B3B3B] pointer-events-none"></div>
+      <div class="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-[#3B3B3B] pointer-events-none"></div>
+
+      <!-- Form Container -->
+      <div class="bg-[#D2CEB6]/10 border border-[#3B3B3B] p-8 md:p-12 relative shadow-none backdrop-blur-sm">
+        <!-- Header -->
+        <div class="border-b-2 border-[#3B3B3B] pb-6 mb-10 flex justify-between items-end">
+          <h1 class="text-5xl font-display text-[#3B3B3B] uppercase">{t('page.contact.title')}</h1>
+          <div class="font-technical text-[12px] text-[#3B3B3B]/60 flex items-center gap-2 uppercase tracking-widest font-bold">
+            <span class="w-2 h-2 bg-[#8A9A5B] block animate-pulse"></span>
+            {t('page.contact.sys_req')}
+          </div>
+        </div>
+
+        <!-- Form Fields -->
+        <form class="space-y-10">
+          <div class="relative group">
+            <label class="absolute -top-[10px] left-0 font-technical text-[10px] font-bold text-[#3B3B3B]/50 bg-[#CDC9B0] px-2 transition-colors group-focus-within:text-[#3B3B3B] uppercase tracking-tighter" for="name">{t('page.contact.op_name')}</label>
+            <input 
+              class="w-full bg-transparent border-0 border-b border-[#3B3B3B]/30 py-3 px-1 font-technical text-[14px] text-[#3B3B3B] focus:ring-0 focus:border-[#3B3B3B] transition-colors placeholder:text-[#3B3B3B]/20 uppercase" 
+              id="name" 
+              name="name" 
+              placeholder={t('page.contact.op_name_placeholder')} 
+              required 
+              type="text"
+            />
+          </div>
+
+          <div class="relative group">
+            <label class="absolute -top-[10px] left-0 font-technical text-[10px] font-bold text-[#3B3B3B]/50 bg-[#CDC9B0] px-2 transition-colors group-focus-within:text-[#3B3B3B] uppercase tracking-tighter" for="email">{t('page.contact.secure_relay')}</label>
+            <input 
+              class="w-full bg-transparent border-0 border-b border-[#3B3B3B]/30 py-3 px-1 font-technical text-[14px] text-[#3B3B3B] focus:ring-0 focus:border-[#3B3B3B] transition-colors placeholder:text-[#3B3B3B]/20 uppercase" 
+              id="email" 
+              name="email" 
+              placeholder={t('page.contact.secure_relay_placeholder')} 
+              required 
+              type="email"
+            />
+          </div>
+
+          <div class="relative group">
+            <label class="absolute -top-[10px] left-0 font-technical text-[10px] font-bold text-[#3B3B3B]/50 bg-[#CDC9B0] px-2 transition-colors group-focus-within:text-[#3B3B3B] uppercase tracking-tighter" for="subject">{t('page.contact.mission_param')}</label>
+            <input 
+              class="w-full bg-transparent border-0 border-b border-[#3B3B3B]/30 py-3 px-1 font-technical text-[14px] text-[#3B3B3B] focus:ring-0 focus:border-[#3B3B3B] transition-colors placeholder:text-[#3B3B3B]/20 uppercase" 
+              id="subject" 
+              name="subject" 
+              placeholder={t('page.contact.mission_param_placeholder')} 
+              required 
+              type="text"
+            />
+          </div>
+
+          <div class="relative group mt-12">
+            <label class="absolute -top-[10px] left-0 font-technical text-[10px] font-bold text-[#3B3B3B]/50 bg-[#CDC9B0] px-2 transition-colors group-focus-within:text-[#3B3B3B] uppercase tracking-tighter" for="message">{t('page.contact.data_transmission')}</label>
+            <div class="absolute top-0 right-0 p-1 border-l border-b border-[#3B3B3B] bg-[#D2CEB6]/20 dotted-bg w-8 h-8 pointer-events-none"></div>
+            <textarea 
+              class="w-full bg-transparent border border-[#3B3B3B]/30 p-4 font-technical text-[13px] text-[#3B3B3B] focus:ring-0 focus:border-[#3B3B3B] transition-colors resize-none placeholder:text-[#3B3B3B]/20" 
+              id="message" 
+              name="message" 
+              placeholder={t('page.contact.data_transmission_placeholder')} 
+              required 
+              rows="5"
+            ></textarea>
+          </div>
+
+          <!-- Submit Command -->
+          <div class="pt-6 flex justify-end">
+            <button class="group relative flex items-center gap-4 border border-[#3B3B3B] bg-transparent px-8 py-4 font-technical text-[11px] font-bold text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all duration-150 cursor-pointer overflow-hidden uppercase tracking-widest" type="submit">
+              <span class="relative z-10">{t('page.contact.submit')}</span>
+              <div class="relative z-10 border border-current px-2 py-0.5 text-[9px] opacity-60">
+                [ CMD_01 ]
+              </div>
+              <div class="absolute inset-0 bg-[#3B3B3B] translate-y-full group-hover:translate-y-0 transition-transform duration-150"></div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .font-technical { font-family: var(--font-technical); }
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+  
+  input::placeholder, textarea::placeholder {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+</style>
