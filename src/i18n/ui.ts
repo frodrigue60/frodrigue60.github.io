@@ -12,13 +12,15 @@ export const ui = {
      */
     "nav.home": "HOME",
     "nav.projects": "PROJECTS",
-    "nav.history": "HISTORY",
+    "nav.history": "EXPERIENCE",
     "nav.contact": "CONTACT",
     "nav.status": "ACTIVE STATUS",
     "nav.menu": "MENU",
     "nav.sys_nav": "SYSTEM_NAVIGATION",
     "nav.lang_label": "LANGUAGE",
     "nav.change_lang": "SWITCH TO ESPAÑOL",
+    "site.description": "Luis' Professional Portfolio - Built with Astro, featuring high-performance web development and industrial design aesthetics.",
+    "page.home.title": "Portfolio",
     /*
      * HERO
      */
@@ -73,10 +75,10 @@ export const ui = {
     "page.projects.view_project": "View Project",
     "page.projects.add_new": "ADD_NEW_ENTRY",
     /*
-     * HISTORY PAGE
+     * EXPERIENCE PAGE
      */
-    "page.history.title": "Work History",
-    "page.history.records": "SYS.LOG_RECORDS // 2016-PRESENT",
+    "page.history.title": "Professional Experience",
+    "page.history.records": "SYS.EXP_RECORDS // 2016-PRESENT",
     "page.history.status": "STATUS: ONLINE",
     "page.history.entries": "ENTRIES: [ 03 ]",
     "page.history.loc": "LOC: ",
@@ -84,16 +86,16 @@ export const ui = {
      * CONTACT PAGE
      */
     "page.contact.title": "Contact",
-    "page.contact.sys_req": "SYS_REQ_v4.0",
-    "page.contact.op_name": "OPERATOR_NAME",
-    "page.contact.op_name_placeholder": "Enter operator designation",
-    "page.contact.secure_relay": "SECURE_RELAY",
-    "page.contact.secure_relay_placeholder": "secure relay address",
-    "page.contact.mission_param": "MISSION_PARAM",
-    "page.contact.mission_param_placeholder": "Transmission subject",
-    "page.contact.data_transmission": "DATA_TRANSMISSION",
-    "page.contact.data_transmission_placeholder": "Initiating data entry...",
-    "page.contact.submit": "Initiating Transfer",
+    "page.contact.sys_req": "Contact Form",
+    "page.contact.op_name": "Full Name",
+    "page.contact.op_name_placeholder": "e.g. John Doe",
+    "page.contact.secure_relay": "Email Address",
+    "page.contact.secure_relay_placeholder": "example@email.com",
+    "page.contact.mission_param": "Subject",
+    "page.contact.mission_param_placeholder": "What is this about?",
+    "page.contact.data_transmission": "Message",
+    "page.contact.data_transmission_placeholder": "How can I help you?",
+    "page.contact.submit": "Send Message",
     /*
      * FOOTER
      */
@@ -108,13 +110,15 @@ export const ui = {
      */
     "nav.home": "INICIO",
     "nav.projects": "PROYECTOS",
-    "nav.history": "HISTORIAL",
+    "nav.history": "EXPERIENCIA",
     "nav.contact": "CONTACTO",
     "nav.status": "ESTADO ACTIVO",
     "nav.menu": "MENÚ",
     "nav.sys_nav": "NAVEGACIÓN_SISTEMA",
     "nav.lang_label": "IDIOMA",
     "nav.change_lang": "CAMBIAR A ENGLISH",
+    "site.description": "Portafolio Profesional de Luis - Desarrollado con Astro, destacando el desarrollo web de alto rendimiento y estética de diseño industrial.",
+    "page.home.title": "Portafolio",
     /*
      * HERO
      */
@@ -169,10 +173,10 @@ export const ui = {
     "page.projects.view_project": "Ver Proyecto",
     "page.projects.add_new": "AGREGAR_NUEVA_ENTRADA",
     /*
-     * HISTORY PAGE
+     * EXPERIENCE PAGE
      */
-    "page.history.title": "Historial Laboral",
-    "page.history.records": "SYS.LOG_RECORDS // 2016-PRESENT",
+    "page.history.title": "Experiencia Profesional",
+    "page.history.records": "SYS.EXP_RECORDS // 2016-PRESENT",
     "page.history.status": "STATUS: ONLINE",
     "page.history.entries": "ENTRIES: [ 03 ]",
     "page.history.loc": "LOC: ",
@@ -180,17 +184,17 @@ export const ui = {
      * CONTACT PAGE
      */
     "page.contact.title": "Contacto",
-    "page.contact.sys_req": "SYS_REQ_v4.0",
-    "page.contact.op_name": "OPERATOR_NAME",
-    "page.contact.op_name_placeholder": "Ingrese designación del operador",
-    "page.contact.secure_relay": "SECURE_RELAY",
-    "page.contact.secure_relay_placeholder": "dirección de enlace seguro",
-    "page.contact.mission_param": "MISSION_PARAM",
-    "page.contact.mission_param_placeholder": "Asunto de la transmisión",
-    "page.contact.data_transmission": "DATA_TRANSMISSION",
+    "page.contact.sys_req": "Formulario de Contacto",
+    "page.contact.op_name": "Nombre Completo",
+    "page.contact.op_name_placeholder": "ej. Juan Pérez",
+    "page.contact.secure_relay": "Correo Electrónico",
+    "page.contact.secure_relay_placeholder": "ejemplo@correo.com",
+    "page.contact.mission_param": "Asunto",
+    "page.contact.mission_param_placeholder": "¿De qué trata tu mensaje?",
+    "page.contact.data_transmission": "Mensaje",
     "page.contact.data_transmission_placeholder":
-      "Iniciando entrada de datos...",
-    "page.contact.submit": "Iniciando Transferencia",
+      "¿En qué puedo ayudarte?",
+    "page.contact.submit": "Enviar Mensaje",
     /*
      * FOOTER
      */

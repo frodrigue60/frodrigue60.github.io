@@ -21,27 +21,45 @@ const nextUrl = nextLang === 'en' ? purePath : `/es${purePath === '/' ? '' : pur
         <div class="text-lg font-black tracking-tighter text-[#3B3B3B]">PORTFOLIO_v1.0</div>
         
         <!-- Desktop Nav -->
-        <nav class="hidden md:flex gap-6">
-            <a class="font-serif uppercase tracking-widest text-[10px] font-bold text-[#3B3B3B]/60 hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all duration-75 px-2 py-1" href={translatePath('/')}>{t('nav.home')}</a>
-            <a class="font-serif uppercase tracking-widest text-[10px] font-bold text-[#3B3B3B]/60 hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all duration-75 px-2 py-1" href={translatePath('/projects')}>{t('nav.projects')}</a>
-            <a class="font-serif uppercase tracking-widest text-[10px] font-bold text-[#3B3B3B]/60 hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all duration-75 px-2 py-1" href={translatePath('/history')}>{t('nav.history')}</a>
-            <a class="font-serif uppercase tracking-widest text-[10px] font-bold text-[#3B3B3B]/60 hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all duration-75 px-2 py-1" href={translatePath('/contact')}>{t('nav.contact')}</a>
+        <nav class="hidden md:flex gap-4">
+            {[
+                { href: '/', label: t('nav.home') },
+                { href: '/projects', label: t('nav.projects') },
+                { href: '/history', label: t('nav.history') },
+                { href: '/contact', label: t('nav.contact') },
+            ].map((link) => {
+                const targetPath = translatePath(link.href);
+                const isActive = currentPath === targetPath || (link.href !== '/' && currentPath.startsWith(targetPath));
+                
+                return (
+                    <a 
+                        class={`font-serif uppercase tracking-widest text-[12px] font-black transition-all duration-75 px-3 py-1 border-2 ${
+                            isActive 
+                            ? 'bg-[#3B3B3B] text-[#CDC9B0] border-[#3B3B3B]' 
+                            : 'text-[#3B3B3B] border-transparent hover:border-[#3B3B3B]/40 hover:bg-[#3B3B3B]/5'
+                        }`} 
+                        href={targetPath}
+                    >
+                        {link.label}
+                    </a>
+                )
+            })}
         </nav>
     </div>
     <div class="flex items-center gap-4 md:gap-6">
         <!-- Language Selector (Desktop) -->
-        <a href={nextUrl} class="hidden sm:flex items-center border border-[#3B3B3B] px-3 py-1 font-technical text-[10px] font-bold text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all no-underline">
+        <a href={nextUrl} class="hidden sm:flex items-center border-2 border-[#3B3B3B] px-3 py-1 font-technical text-[11px] font-black text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all no-underline">
             [ {lang.toUpperCase()} ]
         </a>
         
         <!-- Status Indicator -->
         <div class="hidden sm:flex items-center gap-4">
-            <div class="font-serif uppercase tracking-widest text-[10px] font-bold">{t('nav.status')}</div>
+            <div class="font-serif uppercase tracking-widest text-[11px] font-black">{t('nav.status')}</div>
             <span class="material-symbols-outlined text-lg">terminal</span>
         </div>
 
         <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" class="md:hidden flex items-center gap-2 border border-[#3B3B3B] px-3 py-1 font-technical text-[10px] font-bold text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors">
+        <button id="mobile-menu-btn" class="md:hidden flex items-center gap-2 border-2 border-[#3B3B3B] px-3 py-1 font-technical text-[11px] font-black text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors">
             [ {t('nav.menu')} ]
             <span class="material-symbols-outlined text-sm">menu</span>
         </button>
@@ -58,41 +76,48 @@ const nextUrl = nextLang === 'en' ? purePath : `/es${purePath === '/' ? '' : pur
     </div>
     
     <div class="flex-1 overflow-y-auto p-6 flex flex-col gap-8 scanlines">
-        <div class="text-[10px] font-bold text-[#3B3B3B]/60 tracking-widest uppercase border-b border-[#3B3B3B]/20 pb-2">
+        <div class="text-[11px] font-black text-[#3B3B3B] tracking-widest uppercase border-b-2 border-[#3B3B3B]/30 pb-2">
             {t('nav.sys_nav')}
         </div>
         
         <nav class="flex flex-col gap-4">
-            <a class="flex items-center justify-between text-[#3B3B3B] hover:text-[#CDC9B0] hover:bg-[#3B3B3B] border border-transparent hover:border-[#3B3B3B] p-4 transition-colors font-technical font-bold text-xl uppercase tracking-widest" href={translatePath('/')}>
-                {t('nav.home')}
-                <span class="material-symbols-outlined">chevron_right</span>
-            </a>
-            <a class="flex items-center justify-between text-[#3B3B3B] hover:text-[#CDC9B0] hover:bg-[#3B3B3B] border border-transparent hover:border-[#3B3B3B] p-4 transition-colors font-technical font-bold text-xl uppercase tracking-widest" href={translatePath('/projects')}>
-                {t('nav.projects')}
-                <span class="material-symbols-outlined">chevron_right</span>
-            </a>
-            <a class="flex items-center justify-between text-[#3B3B3B] hover:text-[#CDC9B0] hover:bg-[#3B3B3B] border border-transparent hover:border-[#3B3B3B] p-4 transition-colors font-technical font-bold text-xl uppercase tracking-widest" href={translatePath('/history')}>
-                {t('nav.history')}
-                <span class="material-symbols-outlined">chevron_right</span>
-            </a>
-            <a class="flex items-center justify-between text-[#3B3B3B] hover:text-[#CDC9B0] hover:bg-[#3B3B3B] border border-transparent hover:border-[#3B3B3B] p-4 transition-colors font-technical font-bold text-xl uppercase tracking-widest" href={translatePath('/contact')}>
-                {t('nav.contact')}
-                <span class="material-symbols-outlined">chevron_right</span>
-            </a>
+            {[
+                { href: '/', label: t('nav.home') },
+                { href: '/projects', label: t('nav.projects') },
+                { href: '/history', label: t('nav.history') },
+                { href: '/contact', label: t('nav.contact') },
+            ].map((link) => {
+                const targetPath = translatePath(link.href);
+                const isActive = currentPath === targetPath || (link.href !== '/' && currentPath.startsWith(targetPath));
+                
+                return (
+                    <a 
+                        class={`flex items-center justify-between p-4 transition-all font-technical font-bold text-xl uppercase tracking-widest border-2 ${
+                            isActive 
+                            ? 'bg-[#3B3B3B] text-[#CDC9B0] border-[#3B3B3B]' 
+                            : 'text-[#3B3B3B] border-[#3B3B3B]/10 hover:bg-[#3B3B3B]/5'
+                        }`} 
+                        href={targetPath}
+                    >
+                        {link.label}
+                        <span class="material-symbols-outlined">{isActive ? 'arrow_forward' : 'chevron_right'}</span>
+                    </a>
+                )
+            })}
         </nav>
 
         <div class="mt-auto pt-8 border-t border-[#3B3B3B]/20 flex flex-col gap-6">
             <div class="flex flex-col gap-2">
-                <div class="text-[10px] font-bold text-[#3B3B3B]/60 tracking-widest uppercase">
+                <div class="text-[11px] font-black text-[#3B3B3B] tracking-widest uppercase">
                     {t('nav.lang_label')}
                 </div>
-                <a href={nextUrl} class="flex items-center justify-center border-2 border-[#3B3B3B] p-3 font-technical text-sm font-bold text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors bg-[#D2CEB6]/30">
+                <a href={nextUrl} class="flex items-center justify-center border-2 border-[#3B3B3B] p-3 font-technical text-sm font-bold text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors bg-[#D2CEB6]/50">
                     {t('nav.change_lang')}
                 </a>
             </div>
 
-            <div class="flex items-center justify-between bg-[#3B3B3B] text-[#CDC9B0] p-4 border border-[#3B3B3B]">
-                <div class="font-serif uppercase tracking-widest text-[10px] font-bold">{t('nav.status')}</div>
+            <div class="flex items-center justify-between bg-[#3B3B3B] text-[#CDC9B0] p-4 border-2 border-[#3B3B3B]">
+                <div class="font-serif uppercase tracking-widest text-[11px] font-black">{t('nav.status')}</div>
                 <span class="material-symbols-outlined text-lg">terminal</span>
             </div>
         </div>
