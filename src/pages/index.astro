@@ -199,30 +199,30 @@ const t = useTranslations(lang);
 
         <!-- Secondary Module 2 -->
         <article
-          class="border-[3px] border-[#3B3B3B]/20 border-dashed bg-[#D2CEB6] p-6 relative"
+          class="border-[3px] border-[#3B3B3B] bg-[#D2CEB6] p-6 relative flex flex-col h-full"
         >
           <div
-            class="text-[10px] font-bold text-[#3B3B3B] mb-4 flex items-center justify-between border-b border-[#3B3B3B]/20 pb-2 font-technical uppercase"
+            class="text-[10px] font-bold text-[#3B3B3B] mb-4 flex items-center justify-between border-b border-[#3B3B3B]/30 pb-2 font-technical uppercase"
           >
             <span>{t("skills.section")}</span>
             <span class="material-symbols-outlined text-[14px]">widgets</span>
           </div>
           <div
-            class="text-xl font-technical mb-2 uppercase border-l-4 border-[#3B3B3B] pl-2 text-[#3B3B3B] font-bold"
+            class="text-2xl font-technical mb-2 uppercase border-l-4 border-[#3B3B3B] pl-2 text-[#3B3B3B] font-bold"
           >
             {t("skills.title")}
           </div>
-          <p class="text-[10px] text-[#3B3B3B]/60 font-technical mb-4 uppercase tracking-wider">
+          <p class="text-[12px] text-[#3B3B3B]/80 font-technical mb-6 uppercase tracking-wide">
             {t("skills.desc")}
           </p>
           
-          <div class="space-y-4 mb-6">
+          <div class="space-y-8 mb-8">
             <!-- Backend Group -->
             <div>
-              <span class="text-[8px] font-bold text-[#3B3B3B]/40 uppercase block mb-1 font-technical tracking-tighter">Backend_Core</span>
-              <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-bold text-[#3B3B3B]/70 uppercase block mb-2 font-technical tracking-widest border-l-2 border-[#3B3B3B]/30 pl-2">Backend_Core</span>
+              <div class="flex flex-wrap gap-2">
                 {['Go', 'PHP / Laravel', 'Node.js', 'REST_API', 'Bun'].map(skill => (
-                  <span class="text-[9px] border border-[#3B3B3B]/20 bg-[#3B3B3B]/5 px-2 py-0.5 font-technical uppercase text-[#3B3B3B]">
+                  <span class="text-[11px] font-bold border border-[#3B3B3B] bg-[#3B3B3B]/10 px-3 py-1 font-technical uppercase text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -231,10 +231,10 @@ const t = useTranslations(lang);
 
             <!-- Frontend Group -->
             <div>
-              <span class="text-[8px] font-bold text-[#3B3B3B]/40 uppercase block mb-1 font-technical tracking-tighter">Frontend_Interface</span>
-              <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-bold text-[#3B3B3B]/70 uppercase block mb-2 font-technical tracking-widest border-l-2 border-[#3B3B3B]/30 pl-2">Frontend_Interface</span>
+              <div class="flex flex-wrap gap-2">
                 {['Svelte', 'Astro', 'Tailwind_CSS', 'Eleventy', 'Nunjucks'].map(skill => (
-                  <span class="text-[9px] border border-[#3B3B3B]/20 bg-[#3B3B3B]/5 px-2 py-0.5 font-technical uppercase text-[#3B3B3B]">
+                  <span class="text-[11px] font-bold border border-[#3B3B3B] bg-[#3B3B3B]/10 px-3 py-1 font-technical uppercase text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -243,10 +243,10 @@ const t = useTranslations(lang);
 
             <!-- Infra/Data Group -->
             <div>
-              <span class="text-[8px] font-bold text-[#3B3B3B]/40 uppercase block mb-1 font-technical tracking-tighter">Infrastructure_Data</span>
-              <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-bold text-[#3B3B3B]/70 uppercase block mb-2 font-technical tracking-widest border-l-2 border-[#3B3B3B]/30 pl-2">Infrastructure_Data</span>
+              <div class="flex flex-wrap gap-2">
                 {['PostgreSQL', 'Redis', 'Cloudflare', 'Docker', 'S3_MinIO'].map(skill => (
-                  <span class="text-[9px] border border-[#3B3B3B]/20 bg-[#3B3B3B]/5 px-2 py-0.5 font-technical uppercase text-[#3B3B3B]">
+                  <span class="text-[11px] font-bold border border-[#3B3B3B] bg-[#3B3B3B]/10 px-3 py-1 font-technical uppercase text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -257,10 +257,10 @@ const t = useTranslations(lang);
             class="flex justify-between items-center mt-auto border-t border-[#3B3B3B]/20 pt-4"
           >
             <span
-              class="text-[10px] text-[#8A9A5B] font-bold font-technical bg-[#CDC9B0] p-2"
+              class="text-[11px] text-[#3B3B3B] font-bold font-technical bg-[#8A9A5B]/20 border border-[#8A9A5B]/40 px-3 py-1 uppercase"
               >{t("skills.updated")}</span
             >
-            <span class="text-[10px] text-[#3B3B3B] font-technical"
+            <span class="text-[11px] font-bold text-[#3B3B3B] font-technical uppercase border-b border-[#3B3B3B] cursor-pointer hover:text-[#3B3B3B]/60 transition-colors"
               >{t("skills.details")}</span
             >
           </div>
