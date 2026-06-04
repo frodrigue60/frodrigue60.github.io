@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../i18n/utils";
 import thumbnailAnirank from "../images/thumbnail-anirank.png";
 import { Image } from "astro:assets";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <Layout title={`${t("page.home.title")} | Luis Rodz`}>
@@ -38,20 +39,24 @@ const t = useTranslations(lang);
           {t("hero.desc_p")}
         </p>
         <div class="flex flex-wrap gap-4 mt-4">
-          <button
-            class="border border-[#3B3B3B] px-6 py-2 hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors flex items-center gap-2 text-[11px] font-bold uppercase font-technical"
+          <a
+            href="/CV_EN_Luis_Felipe_Rodriguez_Cuevas.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border border-[#3B3B3B] px-6 py-2 hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors flex items-center gap-2 text-[11px] font-bold uppercase font-technical no-underline text-[#3B3B3B]"
           >
             <span class="material-symbols-outlined text-sm">download</span>
             {t("hero.download_cv")}
             <span class="ml-2 text-[10px] border border-current px-1"
               >[ PDF ]</span
             >
-          </button>
-          <button
-            class="border border-[#3B3B3B]/40 text-[#3B3B3B]/60 px-6 py-2 hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors flex items-center gap-2 text-[11px] font-bold uppercase font-technical"
+          </a>
+          <a
+            href={translatePath("/contact")}
+            class="border border-[#3B3B3B] text-[#3B3B3B] px-6 py-2 hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors flex items-center gap-2 text-[11px] font-bold uppercase font-technical no-underline"
           >
             {t("hero.contact")}
-          </button>
+          </a>
         </div>
       </section>
 
@@ -328,10 +333,10 @@ const t = useTranslations(lang);
               class="text-[11px] text-[#3B3B3B] font-bold font-technical bg-[#8A9A5B]/20 border border-[#8A9A5B]/40 px-3 py-1 uppercase"
               >{t("skills.updated")}</span
             >
-            <span
+            <!-- <span
               class="text-[11px] font-bold text-[#3B3B3B] font-technical uppercase border-b border-[#3B3B3B] cursor-pointer hover:text-[#3B3B3B]/60 transition-colors"
               >{t("skills.details")}</span
-            >
+            > -->
           </div>
         </article>
       </section>

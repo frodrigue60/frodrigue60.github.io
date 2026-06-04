@@ -1,4 +1,4 @@
-# Portfolio | Automata System Interface
+# Portfolio
 
 A high-precision technical portfolio developed with **Astro** and **Tailwind CSS**, adhering to a "melancholic industrialism" aesthetic.
 

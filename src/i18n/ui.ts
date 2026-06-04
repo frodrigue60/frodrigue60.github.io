@@ -96,6 +96,9 @@ export const ui = {
     "page.contact.data_transmission": "Message",
     "page.contact.data_transmission_placeholder": "How can I help you?",
     "page.contact.submit": "Send Message",
+    "page.contact.status_sending": "TRANSMITTING_DATA...",
+    "page.contact.status_success": "TRANSMISSION_SUCCESSFUL // MESSAGE_SENT",
+    "page.contact.status_error": "TRANSMISSION_ERROR // TRY_AGAIN",
     /*
      * FOOTER
      */
@@ -195,6 +198,9 @@ export const ui = {
     "page.contact.data_transmission_placeholder":
       "¿En qué puedo ayudarte?",
     "page.contact.submit": "Enviar Mensaje",
+    "page.contact.status_sending": "TRANSMITIENDO_DATOS...",
+    "page.contact.status_success": "TRANSMISIÓN_EXITOSA // MENSAJE_ENVIADO",
+    "page.contact.status_error": "ERROR_DE_TRANSMISIÓN // INTENTAR_DE_NUEVO",
     /*
      * FOOTER
      */

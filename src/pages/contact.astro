@@ -27,7 +27,7 @@ const t = useTranslations(lang);
         </div>
 
         <!-- Form Fields -->
-        <form class="space-y-10">
+        <form id="contact-form" class="space-y-10">
           <div class="relative group">
             <label class="absolute -top-[12px] left-0 font-technical text-[12px] font-black text-[#3B3B3B]/80 bg-[#CDC9B0] px-2 transition-colors group-focus-within:text-[#3B3B3B] uppercase tracking-tighter" for="name">{t('page.contact.op_name')}</label>
             <input 
@@ -77,9 +77,15 @@ const t = useTranslations(lang);
             ></textarea>
           </div>
 
+          <!-- Status Message Relay -->
+          <div id="form-status" class="hidden font-technical text-[11px] font-bold p-3 border uppercase tracking-wider items-center justify-between">
+            <span id="status-text"></span>
+            <span id="status-dot" class="w-2 h-2"></span>
+          </div>
+
           <!-- Submit Command -->
           <div class="pt-6 flex justify-end">
-            <button class="group relative flex items-center gap-4 border-2 border-[#3B3B3B] bg-transparent px-10 py-4 font-technical text-[14px] font-black text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all duration-150 cursor-pointer overflow-hidden uppercase tracking-widest" type="submit">
+            <button class="group relative flex items-center gap-4 border-2 border-[#3B3B3B] bg-transparent px-10 py-4 font-technical text-[14px] font-black text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-[#3B3B3B] transition-all duration-150 cursor-pointer overflow-hidden uppercase tracking-widest" type="submit">
               <span class="relative z-10">{t('page.contact.submit')}</span>
               <div class="absolute inset-0 bg-[#3B3B3B] translate-y-full group-hover:translate-y-0 transition-transform duration-150"></div>
             </button>
@@ -89,6 +95,70 @@ const t = useTranslations(lang);
     </div>
   </main>
 </Layout>
+
+<script define:vars={{ statusSending: t('page.contact.status_sending'), statusSuccess: t('page.contact.status_success'), statusError: t('page.contact.status_error'), accessKey: '6a958f7c-b784-42ce-a81f-ad47f3d7a2ac' }}>
+  const form = document.getElementById('contact-form');
+  const statusDiv = document.getElementById('form-status');
+  const statusText = document.getElementById('status-text');
+  const statusDot = document.getElementById('status-dot');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  let statusTimeout;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    if (statusTimeout) {
+      clearTimeout(statusTimeout);
+    }
+    
+    // Set loading state
+    submitBtn.disabled = true;
+    statusDiv.className = "flex font-technical text-[11px] font-bold p-3 border uppercase tracking-wider items-center justify-between text-[#3B3B3B]/60 border-[#3B3B3B]/20 bg-[#3B3B3B]/5";
+    statusText.textContent = statusSending;
+    statusDot.className = "w-2 h-2 bg-[#3B3B3B]/40 animate-pulse";
+    statusDiv.classList.remove('hidden');
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    object.access_key = accessKey;
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(object)
+      });
+      const result = await response.json();
+      
+      if (response.status === 200 && result.success) {
+        statusDiv.className = "flex font-technical text-[11px] font-bold p-3 border uppercase tracking-wider items-center justify-between text-[#8A9A5B] border-[#8A9A5B] bg-[#8A9A5B]/10";
+        statusText.textContent = statusSuccess;
+        statusDot.className = "w-2 h-2 bg-[#8A9A5B] animate-ping";
+        form.reset();
+        
+        statusTimeout = setTimeout(() => {
+          statusDiv.classList.add('hidden');
+        }, 5000); // Hide after 5 seconds
+      } else {
+        throw new Error(result.message || "Submission failed");
+      }
+    } catch (error) {
+      console.error(error);
+      statusDiv.className = "flex font-technical text-[11px] font-bold p-3 border uppercase tracking-wider items-center justify-between text-red-700 border-red-700 bg-red-700/10";
+      statusText.textContent = statusError;
+      statusDot.className = "w-2 h-2 bg-red-700 animate-bounce";
+      
+      statusTimeout = setTimeout(() => {
+        statusDiv.classList.add('hidden');
+      }, 6000); // Hide after 6 seconds
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
 
 <style>
   .font-technical { font-family: var(--font-technical); }
