@@ -19,6 +19,15 @@ const nextUrl = nextLang === 'en' ? purePath : `/es${purePath === '/' ? '' : pur
 <header class="bg-[#CDC9B0] text-[#3B3B3B] docked full-width top-0 border-b-2 border-[#3B3B3B] flex justify-between items-center w-full px-6 h-16 z-40 sticky">
     <div class="flex items-center gap-8">
         <a id="logo-link" href={translatePath('/')} class="text-lg font-black tracking-tighter text-[#3B3B3B]">LuisRodz.dev</a>
+        <script is:inline>
+            (function () {
+                var link = document.getElementById('logo-link');
+                if (!link) return;
+                var preferred = localStorage.getItem('preferred-lang');
+                var lang = preferred || (location.pathname === '/es' || location.pathname.indexOf('/es/') === 0 ? 'es' : 'en');
+                link.href = lang === 'es' ? '/es/' : '/';
+            })();
+        </script>
         
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-4">
@@ -48,7 +57,7 @@ const nextUrl = nextLang === 'en' ? purePath : `/es${purePath === '/' ? '' : pur
     </div>
     <div class="flex items-center gap-4 md:gap-6">
         <!-- Language Selector (Desktop) -->
-        <a href={nextUrl} class="hidden sm:flex items-center border-2 border-[#3B3B3B] px-3 py-1 font-technical text-[11px] font-black text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all no-underline">
+        <a href={nextUrl} data-lang-switch={nextLang} class="lang-switch hidden sm:flex items-center border-2 border-[#3B3B3B] px-3 py-1 font-technical text-[11px] font-black text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-all no-underline">
             [ {lang.toUpperCase()} ]
         </a>
         
@@ -111,7 +120,7 @@ const nextUrl = nextLang === 'en' ? purePath : `/es${purePath === '/' ? '' : pur
                 <div class="text-[11px] font-black text-[#3B3B3B] tracking-widest uppercase">
                     {t('nav.lang_label')}
                 </div>
-                <a href={nextUrl} class="flex items-center justify-center border-2 border-[#3B3B3B] p-3 font-technical text-sm font-bold text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors bg-[#D2CEB6]/50">
+                <a href={nextUrl} data-lang-switch={nextLang} class="lang-switch flex items-center justify-center border-2 border-[#3B3B3B] p-3 font-technical text-sm font-bold text-[#3B3B3B] hover:bg-[#3B3B3B] hover:text-[#CDC9B0] transition-colors bg-[#D2CEB6]/50">
                     {t('nav.change_lang')}
                 </a>
             </div>
@@ -125,15 +134,36 @@ const nextUrl = nextLang === 'en' ? purePath : `/es${purePath === '/' ? '' : pur
 </div>
 
 <script>
+    function getLangFromPath() {
+        const path = window.location.pathname;
+        return path === '/es' || path.startsWith('/es/') ? 'es' : 'en';
+    }
+
+    function getHomeHref() {
+        const preferred = localStorage.getItem('preferred-lang');
+        const lang = preferred ?? getLangFromPath();
+        return lang === 'es' ? '/es/' : '/';
+    }
+
     function updateLogoHref() {
         const link = document.getElementById('logo-link');
         if (!(link instanceof HTMLAnchorElement)) return;
-        const preferred = localStorage.getItem('preferred-lang');
-        if (preferred === 'es') link.href = '/es/';
-        else if (preferred === 'en') link.href = '/';
+        link.href = getHomeHref();
+    }
+
+    function syncLangSwitchLinks() {
+        document.querySelectorAll<HTMLAnchorElement>('[data-lang-switch]').forEach((link) => {
+            link.addEventListener('click', () => {
+                const lang = link.getAttribute('data-lang-switch');
+                if (lang !== 'es' && lang !== 'en') return;
+                localStorage.setItem('preferred-lang', lang);
+                window.dispatchEvent(new Event('lang-changed'));
+            });
+        });
     }
 
     updateLogoHref();
+    syncLangSwitchLinks();
     window.addEventListener('lang-changed', updateLogoHref);
 
     const menuBtn = document.getElementById('mobile-menu-btn');
