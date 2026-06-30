@@ -18,7 +18,7 @@ const nextUrl = nextLang === 'en' ? purePath : `/es${purePath === '/' ? '' : pur
 ---
 <header class="bg-[#CDC9B0] text-[#3B3B3B] docked full-width top-0 border-b-2 border-[#3B3B3B] flex justify-between items-center w-full px-6 h-16 z-40 sticky">
     <div class="flex items-center gap-8">
-        <a href="/" class="text-lg font-black tracking-tighter text-[#3B3B3B]">LuisRodz.dev</a>
+        <a id="logo-link" href={translatePath('/')} class="text-lg font-black tracking-tighter text-[#3B3B3B]">LuisRodz.dev</a>
         
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-4">
@@ -125,6 +125,17 @@ const nextUrl = nextLang === 'en' ? purePath : `/es${purePath === '/' ? '' : pur
 </div>
 
 <script>
+    function updateLogoHref() {
+        const link = document.getElementById('logo-link');
+        if (!(link instanceof HTMLAnchorElement)) return;
+        const preferred = localStorage.getItem('preferred-lang');
+        if (preferred === 'es') link.href = '/es/';
+        else if (preferred === 'en') link.href = '/';
+    }
+
+    updateLogoHref();
+    window.addEventListener('lang-changed', updateLogoHref);
+
     const menuBtn = document.getElementById('mobile-menu-btn');
     const closeBtn = document.getElementById('close-menu-btn');
     const drawer = document.getElementById('mobile-drawer');
