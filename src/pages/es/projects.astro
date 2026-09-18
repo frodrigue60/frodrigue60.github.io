@@ -8,6 +8,8 @@ import SectionHidderThumb from "../../images/thumbnail-section-hidder.png";
 import AnirankLegacyThumb from "../../images/thumbnail-anirank-legacy.png";
 import CheckinThumb from "../../images/thumbnail-check-in.png";
 import MuricaStoreThumb from "../../images/thumbnail-murica-store.png";
+import BaruchMultiThumb from "../../images/thumbnail-baruch-multi.png";
+import BaruchSingleThumb from "../../images/thumbnail-baruch-single.png";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -37,6 +39,22 @@ const projects = [
     image: AsaosaThumb.src,
     icon: "globe",
     url: "https://github.com/frodrigue60/asaosa-landing",
+  },
+  {
+    title: "Landing multipágina de Baruch Wellness y Ecoturismo",
+    description: "Landing multipágina para Baruch Wellness y Ecoturismo",
+    tags: ["HTML", "CSS", "JavaScript", "Astro", "Tailwind"],
+    image: BaruchMultiThumb.src,
+    icon: "globe",
+    url: "https://github.com/frodrigue60/baruch-multi-demo",
+  },
+  {
+    title: "Landing de una sola página de Baruch",
+    description: "Landing de una sola página para Baruch Wellness y Ecoturismo",
+    tags: ["HTML", "CSS", "JavaScript", "Astro", "Tailwind"],
+    image: BaruchSingleThumb.src,
+    icon: "globe",
+    url: "https://github.com/frodrigue60/baruch-single-demo",
   },
   {
     title: "Murica Store",
